@@ -11,11 +11,11 @@ scrollUPした時のみヘッダーを表示する、
 またthroughを指定してあげる事によって、
 そのtargetからどれくらいはなれた場所でheaderアクションを発火させるかを指定する事ができます。
 
-<script>
-$(function(){
-  var test = new simpleScroll({header: '#header', target: '#target', through: 250});
-  $(window).on('load resize scroll', test.onScroll);
-});
-</script>
+  <script>
+  $(function(){
+    var test = new simpleScroll({header: '#header', target: '#target', through: 250});
+    $(window).on('load resize scroll', test.onScroll);
+  });
+  </script>
 
 css,jsファイルを読込んで、以下のスクリプトをhtmlファイルに記述して下さい。
