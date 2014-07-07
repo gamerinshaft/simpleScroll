@@ -11,7 +11,7 @@
 <div id="target" class="target"></div>
 <script>
 $(function(){
-  var test = new Header({header: '#header', target: '#target', through: 250});
+  var test = new SimpleScroll({header: '#header', target: '#target', through: 250});
   $(window).on('load resize scroll', test.onScroll);
 });
 </script>

@@ -1,4 +1,4 @@
-Header = function(elms){
+SimpleScroll = function(elms){
   var header         = $(elms.header);
   var target         = $(elms.target);
   var $window        = $(window);
