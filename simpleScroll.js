@@ -8,7 +8,7 @@ SimpleScroll = function(elms){
   var targetThrough  = elms.through;
   var latestPosition = $window.scrollTop();
 
-  $('.ss-header-none').css({'top' : -(header.height() + 1)});
+  $('.ss-header-none').css({'top' : -header.outerHeight()});
   $('.ss-header-exist').css({'top' : 0});
 
   var isLowerThanTarget = function(){
@@ -22,7 +22,7 @@ SimpleScroll = function(elms){
   var hideHeader = function(){
     animating    = true;
     header.addClass('ss-header-animating');
-    var params   = {'top' : -(header.height() + 1)};
+    var params   = {'top' : -header.outerHeight()};
     var duration = 400;
     var easing   = "swing";
     var complete = function(){
