@@ -31,7 +31,7 @@ SimpleScroll = function(elms){
   }
 
   var isScrollDown = function(){
-    return latestPosition - lastPosition > 0;
+    return latestPosition - lastPosition > -1;
   }
 
   var hideHeader = function(){
