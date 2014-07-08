@@ -19,3 +19,7 @@ css,jsファイルを読込んで、以下のスクリプトをhtmlファイル�
     });
     </script>
 
+
+テスト
+
+    <a href="http://tanisi.sakura.ne.jp/samples/SimpleScroll/">demo</a>
