@@ -5,11 +5,26 @@ SimpleScroll = function(elms){
   var existing       = false;
   var animating      = false;
   var lastPosition   = $window.scrollTop();
-  var targetThrough  = elms.through;
   var latestPosition = $window.scrollTop();
+  var targetThrough  = elms.through;
+  var position       = elms.position;
+  var showParams;
+  var hideParams;
 
-  $('.ss-header-none').css({'top' : -header.outerHeight()});
-  $('.ss-header-exist').css({'top' : 0});
+  var paramsCheck = function(){
+    if(position == 'top'){
+      showParams = {'top' : '0'};
+      hideParams = {'top' : -header.outerHeight()};
+    }else{
+      showParams = {'bottom' : '0'};
+      hideParams = {'bottom' : -header.outerHeight()};
+    }
+  }
+
+  paramsCheck();
+
+  $('.ss-header-none').css(hideParams);
+  $('.ss-header-exist').css(showParams);
 
   var isLowerThanTarget = function(){
     return $(window).scrollTop() > target.offset().top + targetThrough;
@@ -22,7 +37,6 @@ SimpleScroll = function(elms){
   var hideHeader = function(){
     animating    = true;
     header.addClass('ss-header-animating');
-    var params   = {'top' : -header.outerHeight()};
     var duration = 400;
     var easing   = "swing";
     var complete = function(){
@@ -32,13 +46,12 @@ SimpleScroll = function(elms){
       header.removeClass('ss-header-exist');
       header.removeClass('ss-animating');
     };
-    $('.ss-header-exist').animate(params, duration, easing, complete);
+    $('.ss-header-exist').animate(hideParams, duration, easing, complete);
   }
 
   var showHeader = function(){
     animating    = true;
     header.addClass('ss-animating');
-    var params   = {'top' : '0'};
     var duration = 400;
     var easing   = "swing";
     var complete = function(){
@@ -48,7 +61,7 @@ SimpleScroll = function(elms){
      header.removeClass('ss-header-none')
      header.removeClass('ss-header-animating');
     };
-    $('.ss-header-none').animate(params, duration, easing, complete);
+    $('.ss-header-none').animate(showParams, duration, easing, complete);
   }
 
   this.onScroll = function(){

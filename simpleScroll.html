@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<div id="header" class="header ss-header-none">this is header</div>
+<div id="header" class="header ss-header-none">this is footer</div>
 <div id="target" class="target"></div>
 <script>
 $(function(){
-  var test = new SimpleScroll({header: '#header', target: '#target', through: 250});
+  var test = new SimpleScroll({header: '#header', target: '#target', through: 250, position: 'bottom'});
   $(window).on('load resize scroll', test.onScroll);
 });
 </script>
