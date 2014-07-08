@@ -20,5 +20,5 @@ css,jsファイルを読込んで、以下のスクリプトをhtmlファイル�
     </script>
 
 
-
-<a href="http://tanisi.sakura.ne.jp/samples/SimpleScroll/">demo</a>
+スクロールしていくとある、緑線を超えた任意の位置で上スクロールをしてみてください。
+<a href="http://tanisi.sakura.ne.jp/samples/SimpleScroll/">demoページ</a>
