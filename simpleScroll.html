@@ -14,6 +14,15 @@
 $(function(){
   var test = new SimpleScroll({header: '#header', target: '#target', through: 250, position: 'bottom'});
   $(window).on('load resize scroll', test.onScroll);
+  $(window).on('scrolluptodown', function(){
+    test.hideHeader();
+  });
+  $(window).on('scrolldowntoup', function(){
+    test.showHeader();
+  });
+  $(window).on('beforetargetexisting', function(){
+    test.hideHeader();
+  });
 });
 </script>
 

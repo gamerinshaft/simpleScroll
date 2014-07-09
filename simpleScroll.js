@@ -34,7 +34,7 @@ SimpleScroll = function(elms){
     return latestPosition - lastPosition > -1;
   }
 
-  var hideHeader = function(){
+  this.hideHeader = function(){
     animating    = true;
     header.addClass('ss-header-animating');
     var duration = 400;
@@ -49,7 +49,7 @@ SimpleScroll = function(elms){
     $('.ss-header-exist').animate(hideParams, duration, easing, complete);
   }
 
-  var showHeader = function(){
+  this.showHeader = function(){
     animating    = true;
     header.addClass('ss-animating');
     var duration = 400;
@@ -69,16 +69,24 @@ SimpleScroll = function(elms){
     if(isLowerThanTarget()){
       if(isScrollDown()){
         if(existing && !animating){
-          hideHeader();
+          var e = $.Event( "scrolluptodown" );
+          $window.trigger( e );
         }
       }else{
         if(!existing && !animating){
-          showHeader();
+          var e = $.Event( "scrolldowntoup" );
+          $window.trigger( e );
+          // showHeader();
         }
       }
     }else{
       if(existing && !animating){
-        hideHeader();
+        var e = $.Event( "beforetargetexisting" );
+        $window.trigger( e );
+      }else if(!existing && !animating){
+        var e = $.Event( "beforetargetnone" );
+        $window.trigger( e );
+        // showHeader();
       }
     }
     lastPosition = $window.scrollTop();
