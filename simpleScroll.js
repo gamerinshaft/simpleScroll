@@ -8,6 +8,7 @@ SimpleScroll = function(elms){
   var latestPosition = $window.scrollTop();
   var targetThrough  = elms.through;
   var position       = elms.position;
+  var type           = elms.moveaction;
   var showParams;
   var hideParams;
 
@@ -46,7 +47,10 @@ SimpleScroll = function(elms){
       header.removeClass('ss-header-exist');
       header.removeClass('ss-animating');
     };
-    $('.ss-header-exist').animate(hideParams, duration, easing, complete);
+
+    if( type == 'animate'){
+      $('.ss-header-exist').animate(hideParams, duration, easing, complete);
+    }
   }
 
   this.showHeader = function(){
@@ -61,7 +65,10 @@ SimpleScroll = function(elms){
      header.removeClass('ss-header-none')
      header.removeClass('ss-header-animating');
     };
-    $('.ss-header-none').animate(showParams, duration, easing, complete);
+
+    if( type == 'animate'){
+      $('.ss-header-none').animate(showParams, duration, easing, complete);
+    }
   }
 
   this.onScroll = function(){

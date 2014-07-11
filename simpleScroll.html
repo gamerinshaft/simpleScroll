@@ -12,7 +12,7 @@
 <div id="target" class="target"></div>
 <script>
 $(function(){
-  var test = new SimpleScroll({header: '#header', target: '#target', through: 250, position: 'bottom'});
+  var test = new SimpleScroll({header: '#header', target: '#target', through: 250, position: 'top', moveaction: 'animate'});
   $(window).on('load resize scroll', test.onScroll);
   $(window).on('scrolluptodown', function(){
     test.hideHeader();
