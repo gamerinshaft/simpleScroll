@@ -4,7 +4,7 @@
 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
 <link rel="stylesheet" href="simpleScroll.css" type="text/css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src="simpleScroll.js"></script>
+<script src="hoge.js"></script>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 <div id="target" class="target"></div>
 <script>
 $(function(){
-  var test = new SimpleScroll({header: '#header', target: '#target', through: 250, position: 'top', moveaction: 'animate'});
+  var test = new Hoge({$header: $('#header'), $target: $('#target'), through: 250, position: 'top', moveaction: 'animate'});
   $(window).on('load resize scroll', test.onScroll);
   $(window).on('scrolluptodown', function(){
     test.hideHeader();

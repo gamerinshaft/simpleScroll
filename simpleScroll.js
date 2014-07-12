@@ -55,7 +55,7 @@ SimpleScroll = function(elms){
 
   this.showHeader = function(){
     animating    = true;
-    header.addClass('ss-animating');
+    header.addClass('ss-header-animating');
     var duration = 400;
     var easing   = "swing";
     var complete = function(){
