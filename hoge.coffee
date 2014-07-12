@@ -10,5 +10,13 @@ class window.Hoge
     @animating      = false
     @lastPosition   = @window.scrollTop()
     @latestPosition = @window.scrollTop()
-    @showParams
-    @hideParams
+    @paramsCheck
+
+  paramsCheck: ->
+    if @position == 'top'
+      @showParams = 'top' : '0'
+      @hideParams = 'top' : -header.outerHeight()
+
+    else if @position == 'bottom'
+      @showParams = 'bottom' : '0'
+      @hideParams = 'bottom' : -header.outerHeight()

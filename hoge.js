@@ -12,9 +12,26 @@
       this.animating = false;
       this.lastPosition = this.window.scrollTop();
       this.latestPosition = this.window.scrollTop();
-      this.showParams;
-      this.hideParams;
+      this.paramsCheck;
     }
+
+    Hoge.prototype.paramsCheck = function() {
+      if (this.position === 'top') {
+        this.showParams = {
+          'top': '0'
+        };
+        return this.hideParams = {
+          'top': -header.outerHeight()
+        };
+      } else if (this.position === 'bottom') {
+        this.showParams = {
+          'bottom': '0'
+        };
+        return this.hideParams = {
+          'bottom': -header.outerHeight()
+        };
+      }
+    };
 
     return Hoge;
 
